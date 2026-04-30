@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yshet.Kg | Этно ресторан</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff8f0;
+      color: #2b1b12;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: white;
+      padding: 25px 8%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #d9a441;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #d9a441;
+    }
+
+    .hero {
+      max-width: 760px;
+      margin-top: 150px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 35px;
+      color: #f1e6d6;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d9a441;
+      color: #22140c;
+      padding: 15px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .section-text {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+      color: #6d5548;
+      font-size: 18px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .about h2 {
+      font-size: 38px;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      color: #5c4436;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .features {
+      background: #2b1b12;
+      color: white;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      color: #2b1b12;
+      padding: 32px;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .features .card {
+      background: #3a261a;
+      color: white;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+      color: #d9a441;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .menu-item {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .menu-content {
+      padding: 24px;
+    }
+
+    .menu-content h3 {
+      display: flex;
+      justify-content: space-between;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #b7791f;
+    }
+
+    .gallery {
+      background: #f3e4d0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .review {
+      background: white;
+      padding: 30px;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .review strong {
+      display: block;
+      margin-top: 18px;
+      color: #b7791f;
+    }
+
+    .contact {
+      background: #2b1b12;
+      color: white;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #3a261a;
+      padding: 38px;
+      border-radius: 24px;
+    }
+
+    .contact-box p {
+      margin: 12px 0;
+      font-size: 18px;
+    }
+
+    footer {
+      background: #1d110b;
+      color: #d9c8b6;
+      text-align: center;
+      padding: 22px;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        margin-top: 90px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .about,
+      .cards,
+      .menu-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      nav ul {
+        gap: 15px;
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="home">
+    <nav>
+      <div class="logo">Yshet<span>.Kg</span></div>
+      <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>Этно ресторан в стиле кыргызской юрты</h1>
+      <p>Томленое мясо, стейки, кыргызские напитки и уютная атмосфера юрты для всей семьи.</p>
+      <a href="#contact" class="btn">Забронировать стол</a>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div>
+      <h2>О нашем ресторане</h2>
+      <p>
+        Мы создали место, где современный ресторан соединяется с кыргызским этно-стилем и атмосферой юрты.
+        Здесь можно вкусно поесть, провести семейный ужин, отметить праздник или просто
+        отдохнуть в уютной национальной атмосфере.
+      </p>
+      <p>
+        Главная гордость Yshet.Kg — адал мясо, томленые блюда, сочные стейки, кыргызские напитки и атмосфера настоящего этно-уюта.
+      </p>
+      <p>
+        Вместо обычных столиков у нас будут уютные отдельные юрты для гостей — для семьи, друзей и праздничных встреч.
+      </p>
+      <a href="#menu" class="btn">Посмотреть меню</a>
+    </div>
+    <img src="yurta.jpg" alt="Юрта Yshet.Kg" />
+  </section>
+
+  <section class="features">
+    <h2 class="section-title">Почему выбирают нас</h2>
+    <p class="section-text">Вкус, качество и атмосфера — три главные ценности нашего ресторана.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Адал мясо</h3>
+        <p>Используем только качественное мясо и свежие продукты.</p>
+      </div>
+      <div class="card">
+        <h3>Семейная атмосфера</h3>
+        <p>Уютное пространство для родителей, детей, друзей и гостей.</p>
+      </div>
+      <div class="card">
+        <h3>Отдельные юрты</h3>
+        <p>Гости размещаются не за обычными столиками, а в уютных юртах в кыргызском этно-стиле.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2 class="section-title">Популярные блюда</h2>
+    <p class="section-text">Добавьте свои реальные блюда и цены — этот блок легко изменить.</p>
+
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80" alt="Стейк" />
+        <div class="menu-content">
+          <h3>Стейк <span class="price">950 c</span></h3>
+          <p>Сочный стейк из отборного мяса с фирменным соусом.</p>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1000&q=80" alt="Томленое мясо" />
+        <div class="menu-content">
+          <h3>Томленое мясо <span class="price">780 c</span></h3>
+          <p>Мягкое мясо медленного приготовления с насыщенным вкусом.</p>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=80" alt="Семейный сет" />
+        <div class="menu-content">
+          <h3>Семейный сет <span class="price">3200 c</span></h3>
+          <p>Большой мясной сет для семьи или компании друзей.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2 class="section-title">Галерея</h2>
+    <p class="section-text">Фотографии блюд и атмосферы ресторана.</p>
+
+    <div class="gallery-grid">
+      <img src="yurta.jpg" alt="Юрта для гостей" />
+      <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80" alt="Кухня" />
+      <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80" alt="Мясо" />
+      <img src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=900&q=80" alt="Еда" />
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Отзывы гостей</h2>
+    <p class="section-text">Здесь можно поставить отзывы ваших настоящих клиентов.</p>
+
+    <div class="reviews-grid">
+      <div class="review">
+        <p>“Очень уютное место. Мясо мягкое, вкус насыщенный, детям тоже понравилось.”</p>
+        <strong>— Айгуль</strong>
+      </div>
+      <div class="review">
+        <p>“Хороший сервис, красивая атмосфера и вкусные блюда. Обязательно придем еще.”</p>
+        <strong>— Бакыт</strong>
+      </div>
+      <div class="review">
+        <p>“Отличный ресторан для семейного ужина и праздников.”</p>
+        <strong>— Нурлан</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Контакты</h2>
+    <p class="section-text">Замените данные на свои: адрес, телефон и Instagram.</p>
+
+    <div class="contact-box">
+      <p><strong>Адрес:</strong> г. Бишкек, ул. Кокомерен 26</p>
+      <p><strong>Телефон:</strong> 0755 848 487</p>
+      <p><strong>Instagram:</strong> @yshet.kg</p>
+      <p><strong>Время работы:</strong> ежедневно с 10:00 до 23:00</p>
+      <br />
+      <a class="btn" href="tel:+996755848487">Позвонить</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Yshet.Kg. Все права защищены.</p>
+  </footer>
+</body>
+</html>
